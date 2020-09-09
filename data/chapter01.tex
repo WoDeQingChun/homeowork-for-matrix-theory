@@ -1,0 +1,66 @@
+\chapter{第一次作业}
+
+\begin{homework}
+    证明下列命题：
+    \begin{enumerate}
+        \item 线性空间中的零向量唯一
+        \item 每个向量的负向量唯一
+        \item 零和任何向量的数量积为零向量
+        \item 任何数与零向量的数量积为零向量
+        \item $-1$和任何向量的数量积为这个向量的负向量
+    \end{enumerate}
+\end{homework}
+\begin{proof}
+    证明：设$V$是数域$K$上的线性空间
+    \begin{enumerate}
+        \item 设$0,0^{'}$都是线性空间$ V $中的零向量，则:
+    \begin{equation*}
+        0 = 0^{'} + 0 = 0 + 0^{'} = 0^{'}
+    \end{equation*}
+    即零向量唯一
+
+        \item $\forall x \in V$,假设$\alpha, \beta$都是$x$的负向量，则有：
+        \begin{align*}
+                \alpha + x &= 0 = \beta + x\\
+                (\alpha + x) + (-x) &= (\beta + x) + (-x)\\
+                \alpha + (x + (-x)) &= \beta + (x + (-x))\\
+                \alpha + 0 &= \beta + 0\\
+                \alpha &= \beta\\
+        \end{align*}
+        即负向量唯一
+
+        \item $\forall x \in V$, 有：
+        \begin{align*}
+            0x &= (0 + 0)x = 0x + 0x \\
+            -(0x) + 0x &= -(0x) + (0x + 0x) \\
+            0 &= (-(0x) + 0x) + 0x\\
+            0 &= 0 + 0x\\
+            0 &= 0x
+        \end{align*}
+        得证
+
+        \item $\forall a \in K$, 有：
+        \begin{align*}
+            a0 &= a(0 + 0) = a0 + a0 \\
+            -(a0) + a0 &= -(a0) + (a0 + a0) \\
+            0 &= (-(a0) + a0) + a0\\
+            0 &= 0 + a0\\
+            0 &= a0
+        \end{align*}
+        得证
+
+        \item $\forall x \in V$, 有：
+        \begin{equation*}
+            -1(x) + x = -1(x) + 1x = (-1 + 1)x = 0x = 0 = -x + x
+        \end{equation*}
+        由负向量的唯一性得：$-1(x) = -x$
+    \end{enumerate}
+\end{proof}
+
+\begin{homework}
+        设$V = \{A \mid A^2 = A, A \in R^{n \times n}\}$,在$V$中定义通常的矩阵加法与数乘运算，试问$V$是否构成线性空间？并说明理由。
+\end{homework}
+\begin{solution}
+    显然$E \in V$,在加法运算下，$E + E = 2E$,但$(2E)^2=4E \neq 2E$，
+    故$(E + E) \not\in V$,不满足加法的封闭性。因此不构成线性空间！
+\end{solution}
